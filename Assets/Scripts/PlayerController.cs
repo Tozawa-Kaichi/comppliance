@@ -28,6 +28,7 @@ public class PlayerController : MonoBehaviour
     {
         //物理挙動をUpdateに書くと動きにばらつきが発生し不自然になるのでFixedUpdateに書きます
         // rigidbodyのx軸（横）とz軸（奥）に力を加える
-        _rigidbody.AddForce(_x * _speed, 0, _z * _speed);
+        //斜め移動だけ早くならないように数値を正規化
+        _rigidbody.AddForce(new Vector3( _x, 0, _z).normalized * _speed);
     }
 }
