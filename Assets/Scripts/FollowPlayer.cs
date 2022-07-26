@@ -17,7 +17,11 @@ public class FollowPlayer : MonoBehaviour
     }
     private void Update()
     {
-        // 自分の座標にtargetの座標に相対座標を足した値を代入する
-        this.transform.position = _target.position + _offset; 
+        if(_target)//Nullチェック
+        {
+            // 自分の座標にtargetの座標に相対座標を足した値を代入する
+            this.transform.position = _target.position + _offset;
+        }
+        
     }
 }
