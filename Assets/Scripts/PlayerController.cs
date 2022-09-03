@@ -23,12 +23,13 @@ public class PlayerController : MonoBehaviour
         //入力をｘとｚに代入
         _x = Input.GetAxis("Horizontal");
         _z = Input.GetAxis("Vertical");
+        
     }
     private void FixedUpdate()//秒間に呼ばれる回数が一定です
     {
         //物理挙動をUpdateに書くと動きにばらつきが発生し不自然になるのでFixedUpdateに書きます
         // rigidbodyのx軸（横）とz軸（奥）に力を加える
         //斜め移動だけ早くならないように数値を正規化
-        _rigidbody.AddForce(new Vector3( _x, 0, _z).normalized * _speed);
+        _rigidbody.AddForce(new Vector3(_x, 0, _z).normalized * _speed);
     }
 }

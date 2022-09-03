@@ -7,7 +7,7 @@ using UnityEngine;
 /// </summary>
 public class FollowPlayer : MonoBehaviour
 {
-    [Tooltip("ヒエラルキー上のカメラで追いかけたい物を対象に選んでください")]
+    [Header("ヒエラルキー上のカメラで追いかけたい物を対象に選んでくださ"),Tooltip("ヒエラルキー上のカメラで追いかけたい物を対象に選んでください")]
     [SerializeField] Transform _target = default; //カメラの位置を格納するための変数
     private Vector3 _offset; // 相対座標
     private void Start()
@@ -17,11 +17,10 @@ public class FollowPlayer : MonoBehaviour
     }
     private void Update()
     {
-        if(_target)//Nullチェック
+        if (_target)//Nullチェック
         {
             // 自分の座標にtargetの座標に相対座標を足した値を代入する
             this.transform.position = _target.position + _offset;
         }
-        
     }
 }
