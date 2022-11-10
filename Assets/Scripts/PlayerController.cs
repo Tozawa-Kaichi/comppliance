@@ -7,8 +7,7 @@ using UnityEngine;
 /// </summary>
 public class PlayerController : MonoBehaviour
 {
-    [Tooltip("‚±‚ê‚ÍƒvƒŒƒCƒ„[‚Ì‘¬“x‚Å‚·")]
-    [SerializeField] float _speed = default; 
+    [Header("‚±‚ê‚ÍƒvƒŒƒCƒ„[‚Ì‘¬“x‚Å‚·"), SerializeField] float _speed = default; 
     float _x = default; //‰¡•ûŒü‚Ì“ü—Í‚ğŠi”[‚·‚éˆ×‚Ì•Ï”
     float _z = default; //c•ûŒü‚Ì“ü—Í‚ğŠi”[‚·‚éˆ×‚Ì•Ï”
     Rigidbody _rigidbody = default; // “¯ˆê‚ÌGameObject‚ª‚ÂRigidbody‚ğŠi”[‚·‚é‚½‚ß‚Ì•Ï”
@@ -23,7 +22,6 @@ public class PlayerController : MonoBehaviour
         //“ü—Í‚ğ‚˜‚Æ‚š‚É‘ã“ü
         _x = Input.GetAxis("Horizontal");
         _z = Input.GetAxis("Vertical");
-        
     }
     private void FixedUpdate()//•bŠÔ‚ÉŒÄ‚Î‚ê‚é‰ñ”‚ªˆê’è‚Å‚·
     {
